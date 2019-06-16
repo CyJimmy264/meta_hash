@@ -1,6 +1,6 @@
 # MetaHash
 
-Here is a ruby library for interacting with the MetaHash protocol/network.
+Here is a ruby library for interacting with the [#MetaHash](https://metahash.org/ "#MetaHash | Fast, secure, decentralized cryptocurrency") protocol/network.
 
 ## Installation
 
@@ -20,7 +20,58 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### MetaHash::Key
+
+Generate a new #MetaHash key:
+
+```ruby
+key = MetaHash::Key.generate
+```
+
+Read and write a passphrase secured private key from file:
+
+The second argument with passphrase is optional.
+
+If the key is password protected when reading and passphrase is omitted, it will
+be requested from STDIN.
+
+```ruby
+
+key = MetaHash::Key.read(
+  '~/.metahash_wallets/_unregistered/mhc/0x0123456789abcdef0123456789abcdef0123456789abcdef01.ec.priv',
+  'passphrase',
+)
+
+key.write(
+  "#{key.addr}.ec.priv",
+  'passphrase',
+)
+```
+
+To get plain public and private keys use:
+
+```ruby
+key.priv                         # private key in DER hex
+key.priv :der                    # for binary string
+
+key.pub                          # public key in DER hex
+key.pub :der                     # for binary string
+```
+
+Computes an address from a key:
+
+```ruby
+key.addr
+```
+
+Data signing and signature verification:
+
+```ruby
+sig = key.sign('data')                           # sign data
+
+public_key = MetaHash::Key.from_der key.pub :der # get public key from private key
+public_key.verify('data', sig)                   # verify data signature
+```
 
 ## Development
 
