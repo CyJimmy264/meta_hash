@@ -86,3 +86,11 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/CyJimm
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Donate
+
+MHC: 0x008b9b8d14a86efa1b8790ba841ceed34c6cb17db5232ba7f6\
+XLM: GAH7RJ3T76NNYUL3HBJD4DPTC54LVQA7CFYPC5MSDCY4GA3ZDRSOWLHF\
+LTC: LZ8fSQ7skBwK7CeU8TJFy5VykhE3H5R1ZQ\
+BCH: bitcoincash:qrxe7uq97pvjx066s97xc58tzvw3xwmknc88fppf4w
+
