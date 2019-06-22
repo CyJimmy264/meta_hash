@@ -89,7 +89,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Donate
 
-MHC: 0x008b9b8d14a86efa1b8790ba841ceed34c6cb17db5232ba7f6\
+MHC: 0x0031337c35f8e7a3b3acb3952bc126a3493a40959d0a6c5a5f\
 XLM: GAH7RJ3T76NNYUL3HBJD4DPTC54LVQA7CFYPC5MSDCY4GA3ZDRSOWLHF\
 LTC: LZ8fSQ7skBwK7CeU8TJFy5VykhE3H5R1ZQ\
 BCH: bitcoincash:qrxe7uq97pvjx066s97xc58tzvw3xwmknc88fppf4w
