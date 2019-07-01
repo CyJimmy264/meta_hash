@@ -1,5 +1,7 @@
 require 'meta_hash/version'
 require 'meta_hash/key'
+require 'meta_hash/net'
+require 'meta_hash/net/ip_scores'
 require 'string'
 
 module MetaHash
