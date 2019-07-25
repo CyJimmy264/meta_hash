@@ -7,6 +7,12 @@ RSpec.describe MetaHash::Net::IPScores do
     }
   end
 
+  let :ip_scores_hash2 do
+    {
+      '1.1.1.1' => 3,
+    }
+  end
+
   let :ip_scores_rating do
     {
       '2.2.2.2' => 1,
@@ -20,6 +26,7 @@ RSpec.describe MetaHash::Net::IPScores do
   end
 
   let(:ip_scores) { described_class.new ip_scores_hash }
+  let(:ip_scores2) { described_class.new ip_scores_hash2}
   let(:ip) { '2.2.2.2' }
 
   describe '.new' do
@@ -82,6 +89,9 @@ RSpec.describe MetaHash::Net::IPScores do
     let :result do
       "2.2.2.2,1\n1.1.1.1,0\n3.3.3.3,-1"
     end
+    let :result2 do
+      "1.1.1.1,3\n2.2.2.2,1\n3.3.3.3,-1"
+    end
 
     after do
       ip_scores_file.unlink
@@ -91,6 +101,13 @@ RSpec.describe MetaHash::Net::IPScores do
       subject
       expect(File.read(ip_scores_file.path))
         .to match /#{Regexp.quote(result)}/m
+    end
+
+    it 'rewrites mutual ip scores' do
+      subject
+      ip_scores2.save ip_scores_file.path
+      expect(File.read(ip_scores_file.path))
+        .to match /#{Regexp.quote(result2)}/m
     end
   end
 end
